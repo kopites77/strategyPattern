@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Credit Card Payment</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles.css' %}" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Enter Credit Card Details</h1>
+      <form method="POST">
+        {% csrf_token %}
+        <p>Card Number: <input type="text" name="card_number" required /></p>
+        <p>Cardholder Name: <input type="text" name="card_name" required /></p>
+        <p>
+          Expiration Date:
+          <input type="month" name="expiration_date" required />
+        </p>
+        <button type="submit">Finish Payment</button>
+      </form>
+    </div>
+  </body>
+</html>
